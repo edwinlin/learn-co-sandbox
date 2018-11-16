@@ -1,0 +1,15 @@
+def hi()
+var array1 = ['a', 'b', 'c'];
+
+array1.each do |element| 
+  puts element
+      
+  return element
+
+  if (element == 'b')
+    puts 'B'
+  end
+end
+
+hi()
+

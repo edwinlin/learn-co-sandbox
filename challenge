@@ -1,0 +1,30 @@
+
+function find(array, criteriaFn) {
+  let current = array
+  let next = []
+ 
+  while (current) {
+    if (criteriaFn(current)) {
+      return current
+    }
+
+    if (Array.isArray(current)) {
+      for (let i = 0; i < current.length; i++) {
+        next.push(current[i])
+      }
+    }
+    if (typeof current === "object") {
+      values = Object.values(current)
+      for (let i = 0; i < values.length; i++) {
+        next.push(values[i])
+      }
+    }
+
+    current = next.shift()
+  }
+ 
+  return null
+}
+
+const collections = [1, [2,{hi: 7}, [4, [5, [6]], 3]]]
+console.log(find(collections, n => n > 5))

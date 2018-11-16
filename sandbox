@@ -1,0 +1,14 @@
+function hi(){
+var array1 = ['a', 'b', 'c'];
+
+array1.forEach(function(element) {
+  console.log(element)
+      return
+
+  if(element === 'b'){  
+    console.log('B')
+  }
+});
+}
+
+hi()
